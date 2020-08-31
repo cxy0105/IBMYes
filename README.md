@@ -74,59 +74,7 @@ URL后加上生成的WebSocket路径，看到`Bad Request`便成功了
 
 IBM Cloud 10天不操作就会关机，所以我们需要 十天内对其重启一次，避免关机。
 
-首先登录IBM Cloud
-
-点击又上角的命令行
-
-在这一步我们主要是记录4个值
-
- ```
-IBM_ACCOUNT // IBM Cloud的登录邮箱和密码
-IBM_APP_NAME // 应用的名称
-REGION_NUM // 区域编码
-RESOURSE_ID // 资源组ID
- ```
-
-具体后面会一步一步完成
-
-![image-20200615175949804](img/README/image-20200615175949804.png)
-
-进入命令行先执行
-
-```shell
-ibmcloud login
-```
-
-输入邮箱和密码。
-
-之后记录下区域(Region)
-
-![image-20200615180817619](img/README/image-20200615180817619.png)
-
-```
-#1. au-syd
-#2. in-che
-#3. jp-tok
-#4. kr-seo
-#5. eu-de
-#6. eu-gb
-#7. us-south
-#8. us-east
-```
-
-这里需要记下和区域对应的编号也就是`REGION_NUM`，比如我这里是us-south,那么我的区域编号是`7`
-
-接下来获取资源组id`RESOURSE_ID`
-
-```shell
-ibmcloud resource groups
-```
-
-![image-20200615183425453](img/README/image-20200615183425453.png)
-
-图中所指向便是`RESOURSE_ID`
-
-现在返回github，到本项目
+返回github，到本项目
 
 ```
 https://github.com/CCChieh/IBMYes
@@ -144,26 +92,15 @@ https://github.com/CCChieh/IBMYes
 
 New secret
 
-分别建立四个secret
+分别建立三个secret
 
 ```
-IBM_ACCOUNT // IBM Cloud的登录邮箱和密码
+IBM_ACCOUNT // IBM Cloud的登录邮箱
+IBM_PASSWORD // IBM Cloud的登录密码
 IBM_APP_NAME // 应用的名称
-REGION_NUM // 区域编码
-RESOURSE_ID // 资源组ID
 ```
 
-
-
-以`IBM_ACCOUNT`为例![image-20200615184703280](img/README/image-20200615184703280.png)
-
-第一行为邮箱，第二行为密码。
-
-这里需要邮箱和密码所以中间换行 ，其他的不需要换行 。
-
-把四个secret补充完成
-
-![image-20200615185015130](img/README/image-20200615185015130.png)
+把三个secret补充完成
 
 之后点击上方Actions，在这里你就会看到有个IBM Cloud Auto Restart在执行。
 
